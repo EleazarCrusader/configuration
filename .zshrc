@@ -12,7 +12,7 @@ ZSH_THEME="../../.oh-my-zsh-themes/doubleend"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias workSpace="cd /Volumes/user/markm/WorkSpace/"
+alias wSpace="cd ~/Documents/workspace"
 alias la="ls -alht"
 alias apstart="sudo /usr/local/bin/apachectl start"
 alias apstop="sudo /usr/local/bin/apachectl stop"
