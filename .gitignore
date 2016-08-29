@@ -9,6 +9,11 @@
 !.zprofile
 !.oh-my-zsh
 !.oh-my-zsh/*
+!.oh-my-zsh/lib/*
+!.oh-my-zsh/plugins/*
+!.oh-my-zsh/templates/*
+!.oh-my-zsh/themes/*
+!.oh-my-zsh/tools/*
 !.oh-my-zsh-themes
 !.oh-my-zsh-themes/*
 !.ssh/config
