@@ -46,8 +46,8 @@ alias grbi="git rebase -i"
 alias grbm="git rebase master"
 alias gca="git commit -a"
 alias gcam="git commit -am"
-alias gcamend="git commit -amend --no-edit"
-alias gcamendm="git commit -amend"
+alias gcamend="git commit --amend --no-edit"
+alias gcamendm="git commit --amend"
 alias gcundo="git reset --soft HEAD~1"
 alias gb="git branch"
 alias gbd="git branch -d"
@@ -80,86 +80,6 @@ reloadzrc() {
   . ~/.zshrc
 }
 
-startlocal() {
-  echo "STARTING APACHE & TOMCAT"
-  apstart
-  tcstart
-}
-
-stoplocal() {
-  echo "STOPPING APACHE & TOMCAT"
-  tcstop
-  apstop
-}
-
-restartlocal() {
-  echo "*** RESTARTING APACHE & TOMCAT ***"
-  stoplocal
-  startlocal
-}
-
-cdmods() {
-  if [ -z "$1" ]
-  then
-    echo "enter the environment name (i.e. trunk, release, test1, etc)"
-  else
-    cd /var/webapps/lampo.$1/dr/modules
-    pwd
-  fi
-}
-
-cdcss() {
-  if [ -z "$1" ]
-  then
-    echo "enter the environment name (i.e. trunk, release, test1, etc)"
-  else
-    cd /var/webapps/lampo.$1/dr/resources/css
-  fi
-}
-
-cdgc() {
-  if [ -z "$1" ]
-  then
-    echo "enter the environment (i.e. trunk, release, test1, etc)"
-  else
-    cd /var/webapps/lampo.$1/dr/modules/gc
- fi
-}
-
-cddr() {
-  if [ -z "$1" ]
-  then
-    echo "enter the environment (i.e. trunk, release, test1, etc)"
-  else
-    cd /var/webapps/lampo.$1/dr
- fi
-}
-
-cdsites() {
-  if [ -z "$1" ]
-  then
-    echo "enter the environment (i.e. trunk, release, test1, etc)"
-  else
-    cd /var/webapps/lampo.$1/dr/sites
- fi
-}
-
-updatemaps() {
-  if [ -z "$1" ]
-  then
-    echo "enter the environment name (i.e. dr, fpucentral, core, coaching, andresgutierrez, elp, entreleadership, foundationsu, service, etc)"
-  elif [ "$1" == "dr" ]
-  then
-    sudo /opt/local/apache2/bin/httxt2dbm -v -i /opt/local/etc/apache22/Maps/daveramsey.com.map -o /opt/local/etc/apache22/Maps/daveramsey.com.dbm
-  elif [ "$1" == "fpucentral" ]
-  then
-    sudo /opt/local/apache2/bin/httxt2dbm -v -i /opt/local/etc/apache22/Maps/daveramsey.com.map -o /opt/local/etc/apache22/Maps/daveramsey.com.dbm
-  else
-cd    echo "$1 not yet implemented!"
-  fi
-}
-
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -190,4 +110,4 @@ unsetopt correct_all
 export EDITOR=nano
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/git/bin:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:/usr/local/git/bin
